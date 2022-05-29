@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int minOperations(vector<int>& nums) {
+            
+        int diff;
+        int ct = 0;
+        for(int i=1;i<nums.size();i++)
+        {
+            diff=0;
+            if(nums[i] <= nums[i-1])
+            {
+                diff = ( nums[i] - nums[i-1] );
+                diff =diff + 1;
+                nums[i] =nums[i] + diff;
+            }
+            
+            ct = ct + diff;
+        }       
+        
+        return ct;
+    }
+};
